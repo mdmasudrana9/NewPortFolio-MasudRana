@@ -9,8 +9,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        lightHover: "#fcf4ff",
+        darkHover: "#2a004a",
+        darkTheme: "#11001F",
+      },
+      fontFamily: {
+        ovo: ["Ovo", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
+      },
+      boxShadow: {
+        black: "4px 4px 0 #000",
+        white: "4px 4px 0 #fff",
       },
     },
   },
