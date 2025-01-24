@@ -7,10 +7,11 @@ import { GoArrowRight } from "react-icons/go";
 import { IoMoonOutline } from "react-icons/io5";
 import { CiMenuFries } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const sideMenuRef = useRef();
+  const [isScroll, setIsScroll] = useState(false);
 
   const openSideMenu = () => {
     sideMenuRef.current.style.transform = "translateX(-16rem)";
@@ -20,12 +21,31 @@ const Navbar = () => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className=" fixed top-0 left-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
-      <nav className="flex fixed z-50 justify-between items-center py-4 px-5 lg:px-8 2xl:px-[8%] w-full ">
+      <nav
+        className={`flex fixed z-50 justify-between items-center py-4 px-5 lg:px-8 2xl:px-[8%] w-full ${
+          isScroll ? "bg-white shadow-sm bg-opacity-50 backdrop-blur-lg" : ""
+        }`}
+      >
         <Link href="/">
           <Image
             src={assets.logo}
@@ -34,21 +54,25 @@ const Navbar = () => {
           />
         </Link>
 
-        <ul className=" items-center hidden md:flex bg-white shadow-sm bg-opacity-50 rounded-full px-12 py-3 gap-6">
+        <ul
+          className={`items-center hidden md:flex  rounded-full px-12 py-3 gap-6 ${
+            isScroll ? "" : "bg-white shadow-sm bg-opacity-50"
+          }`}
+        >
           <li className="font-ovo">
-            <Link href="home">Home</Link>
+            <Link href="#home">Home</Link>
           </li>
           <li className="font-ovo">
             <a href="#about">About Me</a>
           </li>
           <li className="font-ovo">
-            <Link href="services">Services</Link>
+            <Link href="#services">Services</Link>
           </li>
           <li className="font-ovo">
-            <Link href="my-work">My Work</Link>
+            <Link href="#my-work">My Work</Link>
           </li>
           <li className="font-ovo">
-            <Link href="contact-me">Contact Me</Link>
+            <Link href="#contact-me">Contact Me</Link>
           </li>
         </ul>
 
@@ -76,19 +100,19 @@ const Navbar = () => {
                 <RxCross2 size={24} onClick={closeSideMenu} />
               </div>
               <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#">Home</Link>
+                <Link href="#home">Home</Link>
               </li>
               <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#">About Me</Link>
+                <Link href="#about">About Me</Link>
               </li>
               <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#">Services</Link>
+                <Link href="#services">Services</Link>
               </li>
               <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#">My Work</Link>
+                <Link href="#my-work">My Work</Link>
               </li>
               <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#">Contact Me</Link>
+                <Link href="#contact-me">Contact Me</Link>
               </li>
             </ul>
           </div>
