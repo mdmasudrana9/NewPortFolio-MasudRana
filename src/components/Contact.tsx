@@ -4,13 +4,18 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { useState } from "react";
 
+type TError = {
+  success: boolean;
+  message: string;
+};
+
 const Contact = () => {
   const [result, setResult] = useState("");
   console.log(result);
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
 
     formData.append("access_key", "f66e2598-6f62-481d-b9ca-42ea966c210a");
 
@@ -19,11 +24,11 @@ const Contact = () => {
       body: formData,
     });
 
-    const data = await response.json();
+    const data: TError = await response.json();
 
     if (data.success) {
       setResult("Form Submitted Successfully");
-      event.target.reset();
+      event.currentTarget.reset();
     } else {
       console.log("Error", data);
       setResult(data.message);
