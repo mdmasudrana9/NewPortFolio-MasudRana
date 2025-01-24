@@ -10,15 +10,19 @@ import { RxCross2 } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
-  const sideMenuRef = useRef();
+  const sideMenuRef = useRef<HTMLUListElement>(null);
   const [isScroll, setIsScroll] = useState(false);
 
   const openSideMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(-16rem)";
+    if (sideMenuRef.current) {
+      sideMenuRef.current.style.transform = "translateX(-16rem)";
+    }
   };
 
   const closeSideMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(16rem)";
+    if (sideMenuRef.current) {
+      sideMenuRef.current.style.transform = "translateX(16rem)";
+    }
   };
 
   useEffect(() => {
