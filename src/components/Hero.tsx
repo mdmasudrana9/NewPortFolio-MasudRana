@@ -14,7 +14,7 @@ const Hero = () => {
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
       >
         <Image
-          src={assets.profile_img}
+          src={assets.profile_img2}
           alt="#"
           className="rounded-full w-32 "
         />

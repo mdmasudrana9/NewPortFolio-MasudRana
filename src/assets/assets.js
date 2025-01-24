@@ -8,14 +8,19 @@ import project_icon_dark from "./project-icon-dark.png";
 import vscode from "./vscode.png";
 import firebase from "./firebase.png";
 import figma from "./figma.png";
+import masudrana from "./masudrana.png";
 import git from "./git.png";
 import mongodb from "./mongodb.png";
 import right_arrow_white from "./right-arrow-white.png";
 import logo from "./logo.png";
+import logonew from "./logonew.png";
+import logob from "./logob.jpg";
+import logowhite from "./whitelogo-removebg-preview.png";
 import logo_dark from "./logo_dark.png";
 import mail_icon from "./mail_icon.png";
 import mail_icon_dark from "./mail_icon_dark.png";
 import profile_img from "./profile-img.png";
+import profile_img2 from "./masud.png";
 import download_icon from "./download-icon.png";
 import hand_icon from "./hand-icon.png";
 import header_bg_color from "./header-bg-color.png";
@@ -38,6 +43,8 @@ import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 
 export const assets = {
   user_image,
+  logowhite,
+  masudrana,
   code_icon,
   code_icon_dark,
   edu_icon,
@@ -51,10 +58,13 @@ export const assets = {
   mongodb,
   right_arrow_white,
   logo,
+  logob,
+  logonew,
   logo_dark,
   mail_icon,
   mail_icon_dark,
   profile_img,
+  profile_img2,
   download_icon,
   hand_icon,
   header_bg_color,

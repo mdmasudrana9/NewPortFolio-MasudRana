@@ -43,8 +43,8 @@ const About = ({ isDarkMode }: AboutProps) => {
         >
           <Image
             alt=""
-            src={assets.user_image}
-            className="w-full rounded-3xl"
+            src={assets.masudrana}
+            className="w-full h-[350px] md:h-[500px] rounded-3xl"
           />
         </motion.div>
         <motion.div
@@ -104,7 +104,7 @@ const About = ({ isDarkMode }: AboutProps) => {
             {toolsData.map((tool, index) => (
               <motion.li
                 whileInView={{ scale: 1.1 }}
-                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
+                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:translate-y-1 duration-500"
                 key={index}
               >
                 <Image src={tool} alt="tool" className="w-5 sm:w-7" />

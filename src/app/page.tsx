@@ -11,7 +11,7 @@ import Work from "@/components/Work";
 import { useEffect, useState } from "react";
 
 const Page = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     if (
