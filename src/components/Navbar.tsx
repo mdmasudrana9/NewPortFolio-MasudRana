@@ -60,7 +60,7 @@ const Navbar = ({
           <Image
             src={isDarkMode ? assets.logonew : assets.logowhite}
             alt="logo"
-            className="size-32 cursor-pointer mr-14"
+            className="size-24 cursor-pointer mr-14"
           />
         </Link>
 
