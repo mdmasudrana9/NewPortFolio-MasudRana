@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { assets } from "./../assets/assets";
 import Image from "next/image";
@@ -8,8 +7,15 @@ import { IoMoonOutline } from "react-icons/io5";
 import { CiMenuFries } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
+import { MdOutlineWbSunny } from "react-icons/md";
+import { AboutProps } from "@/types/types";
 
-const Navbar = () => {
+const Navbar = ({
+  isDarkMode,
+  setIsDarkMode,
+}: AboutProps & {
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const sideMenuRef = useRef<HTMLUListElement>(null);
   const [isScroll, setIsScroll] = useState(false);
 
@@ -42,17 +48,17 @@ const Navbar = () => {
 
   return (
     <>
-      <div className=" fixed top-0 left-0 w-11/12 -z-10 translate-y-[-80%]">
+      <div className=" fixed top-0 left-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
       <nav
-        className={`flex fixed z-50 justify-between items-center py-4 px-5 lg:px-8 2xl:px-[8%] w-full ${
+        className={`flex fixed z-50 justify-between dark:bg-darkTheme dark:shadow-white/20 items-center py-4 px-5 lg:px-8 2xl:px-[8%] w-full ${
           isScroll ? "bg-white shadow-sm bg-opacity-50 backdrop-blur-lg" : ""
         }`}
       >
         <Link href="/">
           <Image
-            src={assets.logo}
+            src={isDarkMode ? assets.logo_dark : assets.logo}
             alt="logo"
             className="size-24 cursor-pointer mr-14"
           />
@@ -60,7 +66,9 @@ const Navbar = () => {
 
         <ul
           className={`items-center hidden md:flex  rounded-full px-12 py-3 gap-6 ${
-            isScroll ? "" : "bg-white shadow-sm bg-opacity-50"
+            isScroll
+              ? ""
+              : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent "
           }`}
         >
           <li className="font-ovo">
@@ -81,10 +89,16 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <IoMoonOutline size={24} />
+          <div onClick={() => setIsDarkMode((prev) => !prev)}>
+            {isDarkMode ? (
+              <MdOutlineWbSunny size={24} />
+            ) : (
+              <IoMoonOutline size={24} />
+            )}
+          </div>
           <Link
-            href="#"
-            className="md:flex gap-2 items-center hidden font-ovo  justify-between border border-gray-500 rounded-full px-10 py-2.5"
+            href="#contact-me"
+            className="md:flex gap-2 items-center hidden font-ovo  justify-between border border-gray-500 rounded-full px-10 py-2.5 dark:border-white/50 "
           >
             Hire Me <GoArrowRight />
           </Link>
@@ -98,7 +112,7 @@ const Navbar = () => {
           <div>
             <ul
               ref={sideMenuRef}
-              className="md:hidden flex flex-col py-20 px-10 fixed -right-64  bg-rose-50 transition duration-500 top-0 bottom-0 w-64 h-screen  gap-4 "
+              className="md:hidden flex flex-col py-20 px-10 fixed -right-64  bg-rose-50 transition duration-500 top-0 bottom-0 w-64 h-screen  gap-4 dark:bg-darkHover dark:text-white "
             >
               <div className="flex justify-end">
                 <RxCross2 size={24} onClick={closeSideMenu} />
