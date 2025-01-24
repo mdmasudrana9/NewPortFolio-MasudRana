@@ -48,7 +48,7 @@ const Navbar = ({
 
   return (
     <>
-      <div className=" fixed top-0 left-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+      <div className=" fixed top-0 left-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden ">
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
       <nav
@@ -60,7 +60,7 @@ const Navbar = ({
           <Image
             src={isDarkMode ? assets.logonew : assets.logowhite}
             alt="logo"
-            className="size-24 cursor-pointer mr-14"
+            className="size-14 cursor-pointer mr-14"
           />
         </Link>
 
