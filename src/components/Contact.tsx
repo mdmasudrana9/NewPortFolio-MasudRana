@@ -7,7 +7,7 @@ import { useState } from "react";
 const Contact = () => {
   const [result, setResult] = useState("");
   console.log(result);
-  const onSubmit = async (event: any) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
     const formData = new FormData(event.target);

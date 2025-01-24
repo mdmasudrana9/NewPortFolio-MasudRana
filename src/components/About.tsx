@@ -24,7 +24,7 @@ const About = () => {
             aliquid voluptatum nobis alias culpa unde.
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl">
-            {infoList.map(({ icon, iconDark, title, description }, index) => (
+            {infoList.map(({ icon, title, description }, index) => (
               <li
                 className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black"
                 key={index}
