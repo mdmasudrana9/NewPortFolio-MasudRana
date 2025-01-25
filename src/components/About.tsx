@@ -102,13 +102,13 @@ const About = ({ isDarkMode }: AboutProps) => {
             className="flex items-center gap-3 sm:gap-5"
           >
             {toolsData.map((tool, index) => (
-              <motion.li
-                whileInView={{ scale: 1.1 }}
+              <li
+                // whileInView={{ scale: 1.1 }}
                 className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:translate-y-1 duration-500"
                 key={index}
               >
                 <Image src={tool} alt="tool" className="w-5 sm:w-7" />
-              </motion.li>
+              </li>
             ))}
           </motion.ul>
         </motion.div>
