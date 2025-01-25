@@ -20,7 +20,9 @@ const Hero = () => {
         />
       </motion.div>
       <h3 className="flex items-end gap-2 text-xl md:text-2xl md-3 font-ovo ">
-        Hi! Im Masud Rana{" "}
+        <div className="animated-text">
+          Hi I&apos;m <span></span>
+        </div>
         <Image src={assets.hand_icon} alt="" className="w-6 animate-dance" />
       </h3>
       <motion.h1
@@ -38,8 +40,8 @@ const Hero = () => {
         className="max-w-2xl mx-auto font-ovo"
       >
         {" "}
-        I am a frontend developer from Barishal , Bangladesh with 2 year of
-        experience in multiple compant like SoftKarrot , NextStack{" "}
+        I am a frontend developer from Barishal , Bangladesh with 1.5 year of
+        experience in multiple company like SoftKarrot , NextStack{" "}
       </motion.p>
       <div className=" flex flex-col sm:flex-row gap-4 mt-4">
         <Link
