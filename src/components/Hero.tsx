@@ -56,7 +56,7 @@ const Hero = () => {
           <Image alt="" src={assets.right_arrow_white} className="w-4" />{" "}
         </Link>
         <a
-          href="/resume.pdf"
+          // href="/resume.pdf"
           download="Masud Rana Resume"
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 dark:text-black bg-white "
         >
