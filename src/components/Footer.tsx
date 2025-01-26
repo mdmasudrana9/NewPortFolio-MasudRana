@@ -10,8 +10,8 @@ const Footer = ({ isDarkMode }: AboutProps) => {
     <div className="mt-20">
       <div className="text-center">
         <Image
-          className="w-36 mx-auto md-2"
-          src={isDarkMode ? assets.logo_dark : assets.logo}
+          className="w-24 mx-auto md-2"
+          src={isDarkMode ? assets.logo_dark : assets.logowhite}
           alt=""
         />
         <div className="w-max flex items-center gap-2 mx-auto">

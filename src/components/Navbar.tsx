@@ -60,7 +60,7 @@ const Navbar = ({
           <Image
             src={isDarkMode ? assets.logonew : assets.logowhite}
             alt="logo"
-            className="md:size-16 size-10 cursor-pointer mr-14"
+            className="md:size-24 size-10 cursor-pointer mr-14"
           />
         </Link>
 
@@ -100,7 +100,7 @@ const Navbar = ({
             href="#contact-me"
             className="md:flex gap-2 items-center hidden font-ovo  justify-between border border-gray-500 rounded-full px-10 py-2.5 dark:border-white/50 "
           >
-            Hire Me <GoArrowRight />
+            Contact <GoArrowRight />
           </Link>
           <CiMenuFries
             size={24}

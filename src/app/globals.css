@@ -26,6 +26,8 @@ body {
   --cursor-bg: #11001f;
 }
 
+/* background-color: var(--cursor-bg); */
+
 .animated-text {
   font-size: 34px;
   font-weight: 600;
@@ -37,7 +39,7 @@ body {
 }
 
 .animated-text span::before {
-  content: "Youtuber";
+  content: "Masud Rana";
   color: #ff7f50;
   animation: words 20s infinite;
 }
@@ -62,23 +64,23 @@ body {
 @keyframes words {
   0%,
   20% {
-    content: "Youtuber";
+    content: "Masud Rana";
   }
   21%,
   40% {
-    content: "Blogger";
+    content: "a Blogger";
   }
   41%,
   60% {
-    content: "Developer";
+    content: "a Developer";
   }
   61%,
   80% {
-    content: "Designer";
+    content: "a Designer";
   }
   81%,
   100% {
-    content: "Masud Rana";
+    content: "a Traveler";
   }
 }
 
