@@ -18,6 +18,15 @@ const Navbar = ({
 }) => {
   const sideMenuRef = useRef<HTMLUListElement>(null);
   const [isScroll, setIsScroll] = useState(false);
+  const [active, setActive] = useState("home");
+
+  const navItems = [
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Services", id: "services" },
+    { name: "Work", id: "my-work" },
+    { name: "Contact", id: "contact-me" },
+  ];
 
   const openSideMenu = () => {
     if (sideMenuRef.current) {
@@ -71,21 +80,17 @@ const Navbar = ({
               : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent "
           }`}
         >
-          <li className="font-ovo">
-            <Link href="#home">Home</Link>
-          </li>
-          <li className="font-ovo">
-            <a href="#about">About Me</a>
-          </li>
-          <li className="font-ovo">
-            <Link href="#services">Services</Link>
-          </li>
-          <li className="font-ovo">
-            <Link href="#my-work">My Work</Link>
-          </li>
-          <li className="font-ovo">
-            <Link href="#contact-me">Contact Me</Link>
-          </li>
+          {navItems.map((item) => (
+            <li
+              key={item.id}
+              className={`font-ovo ${
+                active === item.id ? "text-[#FC388D] dark:text-rose-500" : ""
+              }`}
+              onClick={() => setActive(item.id)}
+            >
+              <Link href={`#${item.id}`}>{item.name}</Link>
+            </li>
+          ))}
         </ul>
 
         <div className="flex items-center gap-4">
@@ -117,21 +122,24 @@ const Navbar = ({
               <div className="flex justify-end">
                 <RxCross2 size={24} onClick={closeSideMenu} />
               </div>
-              <li onClick={closeSideMenu} className="font-ovo">
+              {/* <li  className="font-ovo">
                 <Link href="#home">Home</Link>
-              </li>
-              <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#about">About Me</Link>
-              </li>
-              <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#services">Services</Link>
-              </li>
-              <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#my-work">My Work</Link>
-              </li>
-              <li onClick={closeSideMenu} className="font-ovo">
-                <Link href="#contact-me">Contact Me</Link>
-              </li>
+              </li> */}
+              {navItems.map((item) => (
+                <li
+                  key={item.id}
+                  className={`font-ovo ${
+                    active === item.id
+                      ? "text-[#FC388D] dark:text-rose-500"
+                      : ""
+                  }`}
+                  onClick={() => setActive(item.id)}
+                >
+                  <Link onClick={closeSideMenu} href={`#${item.id}`}>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
