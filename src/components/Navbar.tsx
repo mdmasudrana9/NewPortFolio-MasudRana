@@ -122,9 +122,6 @@ const Navbar = ({
               <div className="flex justify-end">
                 <RxCross2 size={24} onClick={closeSideMenu} />
               </div>
-              {/* <li  className="font-ovo">
-                <Link href="#home">Home</Link>
-              </li> */}
               {navItems.map((item) => (
                 <li
                   key={item.id}
