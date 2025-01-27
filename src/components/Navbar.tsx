@@ -103,7 +103,7 @@ const Navbar = ({
           </div>
           <Link
             href="#contact-me"
-            className="md:flex gap-2 items-center hidden font-ovo  justify-between border border-gray-500 rounded-full px-10 py-2.5 dark:border-white/50 "
+            className="md:flex gap-2 items-center hidden font-ovo  justify-between border border-gray-500 rounded-full px-10 py-2.5 dark:border-white/50 dark:hover:text-black hover:bg-lightHover duration-500 hover:border-orange-300 "
           >
             Contact <GoArrowRight />
           </Link>

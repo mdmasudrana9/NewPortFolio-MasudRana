@@ -32,9 +32,8 @@ const Services = () => {
         transition={{ duration: 0.7, delay: 0.5 }}
         className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui vero
-        mollitia molestias est, ex harum blanditiis? Impedit quae quia fuga
-        officiis eius commodi unde necessitatibus sint odit ex, earum omnis
+        I am a fullstack developer from Barishal, Bangladesh with 1.5 years of
+        experience in multiple companies like SoftKarrot and NexStack Pte Ltd.
       </motion.p>
 
       <motion.div

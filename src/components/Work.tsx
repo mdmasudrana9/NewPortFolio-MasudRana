@@ -33,9 +33,8 @@ const Work = ({ isDarkMode }: AboutProps) => {
         transition={{ duration: 0.7, delay: 0.5 }}
         className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui vero
-        mollitia molestias est, ex harum blanditiis? Impedit quae quia fuga
-        officiis eius commodi unde necessitatibus sint odit ex, earum omnis
+        Welcome to my web development portfolio! Explore a collection of
+        projects showcasing my expertise in fullstack development.
       </motion.p>
 
       <motion.div
