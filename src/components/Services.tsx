@@ -1,3 +1,5 @@
+"use client";
+
 import { assets, serviceData } from "@/assets/assets";
 import Image from "next/image";
 import { motion } from "framer-motion"; // Correct import

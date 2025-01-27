@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { assets } from "../assets/assets";
 import Link from "next/link";
@@ -31,7 +33,7 @@ const Footer = ({ isDarkMode }: AboutProps) => {
       <div className="text-center">
         <Image
           className="w-24 mx-auto md-2"
-          src={isDarkMode ? assets.logo_dark : assets.logowhite}
+          src={isDarkMode ? assets.logonew : assets.logowhite}
           alt=""
         />
         <div className="w-max flex items-center gap-2 mx-auto">

@@ -1,3 +1,5 @@
+"use client";
+
 import { assets, workData } from "@/assets/assets";
 import Image from "next/image";
 import { motion } from "motion/react";

@@ -100,22 +100,22 @@ export const workData = [
   {
     title: "Frontend project",
     description: "Web Design",
-    bgImage: "/work-1.png",
+    bgImage: "/works-1.png",
   },
   {
     title: "Geo based app",
     description: "Mobile App",
-    bgImage: "/work-3.png",
+    bgImage: "/works-2.png",
   },
   {
     title: "Photography site",
     description: "Web Design",
-    bgImage: "/work-3.png",
+    bgImage: "/works-3.png",
   },
   {
     title: "UI/UX designing",
     description: "UI/UX Design",
-    bgImage: "/work-4.png",
+    bgImage: "/works-3.png",
   },
 ];
 
@@ -123,6 +123,12 @@ export const serviceData = [
   {
     icon: assets.web_icon,
     title: "Web design",
+    description: "Web design is the process of building, programming...",
+    link: "",
+  },
+  {
+    icon: assets.web_icon,
+    title: "Web development",
     description: "Web development is the process of building, programming...",
     link: "",
   },
@@ -140,12 +146,12 @@ export const serviceData = [
       "UI/UX design focuses on creating a seamless user experience...",
     link: "",
   },
-  {
-    icon: assets.graphics_icon,
-    title: "Graphics design",
-    description: "Creative design solutions to enhance visual communication...",
-    link: "",
-  },
+  // {
+  //   icon: assets.graphics_icon,
+  //   title: "Graphics design",
+  //   description: "Creative design solutions to enhance visual communication...",
+  //   link: "",
+  // },
 ];
 
 export const infoList = [
