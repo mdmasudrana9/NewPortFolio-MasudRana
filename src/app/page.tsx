@@ -26,7 +26,7 @@ const Page = () => {
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
       if (isDarkMode) {
         document.documentElement.classList.add("dark");
         localStorage.theme = "dark";
