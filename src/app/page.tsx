@@ -15,21 +15,25 @@ const Page = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // Move all browser API usage inside useEffect
-    const userPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const savedTheme = localStorage.getItem("theme");
+    if (typeof window !== "undefined") {
+      // Move all browser API usage inside useEffect
+      const userPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const savedTheme = localStorage.getItem("theme");
 
-    setIsDarkMode(savedTheme === "dark" || (!savedTheme && userPrefersDark));
+      setIsDarkMode(savedTheme === "dark" || (!savedTheme && userPrefersDark));
+    }
   }, []);
 
   useEffect(() => {
     // Only run after initial value is set
     if (isDarkMode === null) return;
 
-    document.documentElement.classList.toggle("dark", isDarkMode);
-    localStorage.setItem("theme", isDarkMode ? "dark" : "");
+    if (typeof document !== "undefined") {
+      document.documentElement.classList.toggle("dark", isDarkMode);
+      localStorage.setItem("theme", isDarkMode ? "dark" : "");
+    }
   }, [isDarkMode]);
 
   // Show nothing until client-side code runs

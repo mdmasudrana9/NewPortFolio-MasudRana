@@ -42,16 +42,21 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (typeof window !== "undefined" && window.scrollY > 50) {
         setIsScroll(true);
       } else {
         setIsScroll(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleScroll);
+      }
     };
   }, []);
 
