@@ -1,4 +1,4 @@
 export interface AboutProps {
-  isDarkMode: boolean;
-  setIsDarkMode?: React.Dispatch<React.SetStateAction<boolean>>;
+  isDarkMode: boolean | null;
+  setIsDarkMode?: React.Dispatch<React.SetStateAction<boolean | null>>;
 }

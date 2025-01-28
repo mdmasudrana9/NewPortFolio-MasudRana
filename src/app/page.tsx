@@ -10,37 +10,30 @@ import Work from "@/components/Work";
 import { useEffect, useState } from "react";
 
 const Page = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [mounted, setMounted] = useState(false);
+  // Initialize with null to avoid hydration mismatch
+  const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
 
-  // Handle initial mount
   useEffect(() => {
-    setMounted(true);
+    // Move all browser API usage inside useEffect
+    const userPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const savedTheme = localStorage.getItem("theme");
 
-    // Move dark mode initialization here
-    const userPrefersDark =
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    setIsDarkMode(userPrefersDark);
+    setIsDarkMode(savedTheme === "dark" || (!savedTheme && userPrefersDark));
   }, []);
 
-  // Handle dark mode changes
   useEffect(() => {
-    if (!mounted) return;
+    // Only run after initial value is set
+    if (isDarkMode === null) return;
 
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "";
-    }
-  }, [isDarkMode, mounted]);
+    document.documentElement.classList.toggle("dark", isDarkMode);
+    localStorage.setItem("theme", isDarkMode ? "dark" : "");
+  }, [isDarkMode]);
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return null; // or a loading spinner/placeholder
+  // Show nothing until client-side code runs
+  if (isDarkMode === null) {
+    return null;
   }
 
   return (

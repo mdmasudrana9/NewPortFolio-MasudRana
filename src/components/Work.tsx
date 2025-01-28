@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { AboutProps } from "@/types/types";
 const Work = ({ isDarkMode }: AboutProps) => {
+  if (isDarkMode === null) return null;
   return (
     <motion.div
       initial={{ y: -20, opacity: 0 }}

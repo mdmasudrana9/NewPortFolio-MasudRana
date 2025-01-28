@@ -8,14 +8,13 @@ import { CiMenuFries } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
 import { MdOutlineWbSunny } from "react-icons/md";
-import { AboutProps } from "@/types/types";
 
-const Navbar = ({
-  isDarkMode,
-  setIsDarkMode,
-}: AboutProps & {
-  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+interface NavbarProps {
+  isDarkMode: boolean | null;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean | null>>;
+}
+
+const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
   const sideMenuRef = useRef<HTMLUListElement>(null);
   const [isScroll, setIsScroll] = useState(false);
   const [active, setActive] = useState("home");
