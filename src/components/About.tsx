@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { AboutProps } from "@/types/types";
 
 const About = ({ isDarkMode }: AboutProps) => {
+  if (isDarkMode === null) return null;
   return (
     <motion.div
       initial={{ scale: 0 }}
@@ -100,7 +101,7 @@ const About = ({ isDarkMode }: AboutProps) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.6 }}
-            className="grid grid-cols-5 md:grid-cols-8 2xl:grid-cols-12 items-center sm:gap-5"
+            className="md:flex grid grid-cols-6 items-center sm:gap-5"
           >
             {toolsData.map((tool, index) => (
               <li
