@@ -11,30 +11,37 @@ import { useEffect, useState } from "react";
 
 const Page = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
 
-  // Initialize dark mode only on the client
+  // Handle initial mount
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
-      const userPrefersDark =
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches);
-      setIsDarkMode(userPrefersDark);
-    }
+    setMounted(true);
+
+    // Move dark mode initialization here
+    const userPrefersDark =
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setIsDarkMode(userPrefersDark);
   }, []);
 
-  // Apply dark mode classes when the mode changes
+  // Handle dark mode changes
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof document !== "undefined") {
-      if (isDarkMode) {
-        document.documentElement.classList.add("dark");
-        localStorage.theme = "dark";
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.theme = "";
-      }
+    if (!mounted) return;
+
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "";
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, mounted]);
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return null; // or a loading spinner/placeholder
+  }
 
   return (
     <div>
