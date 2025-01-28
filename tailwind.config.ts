@@ -24,17 +24,6 @@ export default {
       gridTemplateColumns: {
         auto: "repeat(auto-fit, minmax(200px, 1fr))",
       },
-      animation: {
-        dance: "dance 1s infinite",
-      },
-      keyframes: {
-        dance: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "25%": { transform: "translateY(-5px) rotate(-5deg)" },
-          "50%": { transform: "translateY(5px) rotate(5deg)" },
-          "75%": { transform: "translateY(-5px) rotate(-3deg)" },
-        },
-      },
     },
   },
   darkMode: "selector",

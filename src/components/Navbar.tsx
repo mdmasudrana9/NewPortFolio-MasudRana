@@ -58,7 +58,12 @@ const Navbar = ({
   return (
     <>
       <div className=" fixed top-0 left-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden ">
-        <Image src={assets.header_bg_color} alt="" className="w-full" />
+        <Image
+          src={assets.header_bg_color}
+          alt=""
+          className="w-full"
+          priority={true}
+        />
       </div>
       <nav
         className={`flex fixed z-50 justify-between dark:bg-darkTheme dark:shadow-white/20 items-center py-4 px-5 lg:px-8 2xl:px-[8%] w-full ${
