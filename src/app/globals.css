@@ -40,7 +40,7 @@ body {
 
 .animated-text span::before {
   content: "Masud Rana";
-  color: #ff7f50;
+  color: #22d3ee;
   animation: words 20s infinite;
 }
 
@@ -50,7 +50,7 @@ body {
   width: calc(100% + 8px);
   height: 100%;
   background-color: var(--cursor-bg);
-  border-left: 2px solid #ff7f50;
+  border-left: 2px solid #22d3ee;
   right: -8px;
   animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
 }

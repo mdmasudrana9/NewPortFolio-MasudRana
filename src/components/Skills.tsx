@@ -7,6 +7,7 @@ const Skills = () => {
     { name: "Javascript", progress: 85, icon: "💻" },
     { name: "Python", progress: 55, icon: "🐍" },
     { name: "React", progress: 75, icon: "⚛️" },
+    { name: "Next.js", progress: 70, icon: "▲" },
   ];
 
   const professionalSkills = [
@@ -60,7 +61,10 @@ const Skills = () => {
   };
 
   return (
-    <div className=" dark:text-white px-[12%] text-black py-10 mb-10 scroll-mt-20 w-full">
+    <div
+      id="skills"
+      className=" dark:text-white px-[12%] text-black py-10 mb-10 scroll-mt-20 w-full"
+    >
       <h1 className="text-4xl font-bold text-center mb-16">
         <span className="dark:text-white">My </span>
         <span className="text-cyan-400">Skills</span>

@@ -22,6 +22,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
   const navItems = [
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
     { name: "Services", id: "services" },
     { name: "Work", id: "my-work" },
     { name: "Contact", id: "contact-me" },
@@ -88,7 +89,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
             <li
               key={item.id}
               className={`font-ovo ${
-                active === item.id ? "text-[#FC388D] dark:text-rose-500" : ""
+                active === item.id ? "text-[#22D3EE]" : ""
               }`}
               onClick={() => setActive(item.id)}
             >

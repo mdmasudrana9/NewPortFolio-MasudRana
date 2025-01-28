@@ -7,6 +7,7 @@ import { AboutProps } from "@/types/types";
 import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 
 const Footer = ({ isDarkMode }: AboutProps) => {
+  if (isDarkMode === null) return null;
   const currentYear = new Date().getFullYear();
 
   const socialMediaLinks = [
@@ -47,7 +48,7 @@ const Footer = ({ isDarkMode }: AboutProps) => {
       </div>
 
       <div className="text-center sm:flex items-center justify-between border-t  border-gray-400 mx-[10%] mt-12 py-6">
-        <p className="text-blue-500 hover:text-blue-700">
+        <p className="text-[#22D3EE] hover:text-blue-700">
           {" "}
           &copy; {currentYear} Masud Rana. All rights reserved.
         </p>
@@ -57,7 +58,7 @@ const Footer = ({ isDarkMode }: AboutProps) => {
               <Link
                 href={social.link}
                 target="_blank"
-                className="flex items-center gap-2 text-blue-500 hover:text-blue-700"
+                className="flex items-center gap-2 text-[#22D3EE] hover:text-blue-700"
               >
                 {social.icon}
                 <span>{social.name}</span>

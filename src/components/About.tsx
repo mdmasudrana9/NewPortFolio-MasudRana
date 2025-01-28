@@ -1,6 +1,6 @@
 "use client";
 
-import { assets, infoList, toolsData } from "@/assets/assets";
+import { infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { AboutProps } from "@/types/types";
@@ -38,7 +38,7 @@ const About = ({ isDarkMode }: AboutProps) => {
         transition={{ duration: 0.8 }}
         className="flex w-full flex-col xl:flex-row items-center gap-20 my-20 "
       >
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
@@ -49,14 +49,14 @@ const About = ({ isDarkMode }: AboutProps) => {
             src={assets.masudrana}
             className="w-full h-[350px] md:h-[400px] xl:h-[450px] rounded-3xl"
           />
-        </motion.div>
+        </motion.div> */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex-1"
         >
-          <p className="mb-10 md:max-w-6xl max-w-2xl font-ovo">
+          <p className="mb-10 md:max-w-6xl w-full font-ovo">
             I am an experienced Fullstack Developer with over a decade of
             professional expertise in the field. Throughout my career, I have
             had the privilege of collaborating with prestigious organizations,
@@ -66,7 +66,7 @@ const About = ({ isDarkMode }: AboutProps) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid gap-6 md:max-w-6xl max-w-2xl "
+            className="grid grid-cols-auto gap-6  w-full "
           >
             {infoList.map(({ icon, title, iconDark, description }, index) => (
               <motion.li
@@ -101,7 +101,7 @@ const About = ({ isDarkMode }: AboutProps) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.6 }}
-            className="md:flex grid grid-cols-6 items-center sm:gap-5"
+            className="md:flex grid grid-cols-6 gap-2 items-center sm:gap-5"
           >
             {toolsData.map((tool, index) => (
               <li
