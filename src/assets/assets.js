@@ -98,24 +98,28 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Frontend project",
-    description: "Web Design",
+    title: "Gemini Clone",
+    description: "An Arificial Intelligence",
     bgImage: "/works-3.png",
+    url: "https://geminiai-clone.vercel.app/",
   },
   {
-    title: "Geo based app",
-    description: "Mobile App",
+    title: "Enroll App",
+    description: "A web application for enroll for seminar",
     bgImage: "/enroll.png",
+    url: "https://www.enrollopp.com/",
   },
   {
-    title: "Photography site",
-    description: "Web Design",
+    title: "Pustok",
+    description: "A web application for old book store",
     bgImage: "/works-2.png",
+    url: "https://pustok-final-project-client.vercel.app/",
   },
   {
-    title: "UI/UX designing",
-    description: "UI/UX Design",
+    title: "University Management System",
+    description: "A web application for university management",
     bgImage: "/works-1.png",
+    url: "https://github.com/mdmasudrana9/ph",
   },
 ];
 

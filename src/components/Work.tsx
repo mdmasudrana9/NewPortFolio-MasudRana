@@ -4,6 +4,7 @@ import { assets, workData } from "@/assets/assets";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { AboutProps } from "@/types/types";
+import Link from "next/link";
 const Work = ({ isDarkMode }: AboutProps) => {
   if (isDarkMode === null) return null;
   return (
@@ -54,21 +55,25 @@ const Work = ({ isDarkMode }: AboutProps) => {
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
             style={{ backgroundImage: `url(${project.bgImage})` }}
           >
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex justify-between items-center duration-500 group-hover:bottom-7">
-              <div>
-                <h2 className="font-semibold">{project.title}</h2>
-                <p className="text-sm text-gray-700">{project.description}</p>
+            <Link href={project.url} target="_blank">
+              <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex justify-between items-center duration-500 group-hover:bottom-7">
+                <div>
+                  <h2 className="font-semibold">{project.title}</h2>
+                  <p className="text-sm text-gray-700">{project.description}</p>
+                </div>
+                <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-cyan-400 transition">
+                  <Image
+                    src={
+                      isDarkMode
+                        ? assets.right_arrow_bold_dark
+                        : assets.send_icon
+                    }
+                    alt=""
+                    className="w-5"
+                  />
+                </div>
               </div>
-              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-cyan-400 transition">
-                <Image
-                  src={
-                    isDarkMode ? assets.right_arrow_bold_dark : assets.send_icon
-                  }
-                  alt=""
-                  className="w-5"
-                />
-              </div>
-            </div>
+            </Link>
           </motion.div>
         ))}
       </motion.div>

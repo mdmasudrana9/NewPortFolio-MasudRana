@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Skills = () => {
   const technicalSkills = [
@@ -11,11 +12,14 @@ const Skills = () => {
   ];
 
   const professionalSkills = [
-    { name: "Creativity", progress: 90 },
-    { name: "Communication", progress: 65 },
-    { name: "Problem Solving", progress: 75 },
-    { name: "Teamwork", progress: 85 },
+    { name: "🎨 Creativity", progress: 90 },
+    { name: "💬 Communication", progress: 65 },
+    { name: "🔧 Problem Solving", progress: 75 },
+    { name: "👥 Teamwork", progress: 85 },
   ];
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px" });
 
   type CircularProgressProps = {
     progress: number;
@@ -32,8 +36,16 @@ const Skills = () => {
     const offset = circumference - (progress / 100) * circumference;
 
     return (
-      <svg className="transform -rotate-90 w-32 h-32">
-        {/* Background circle */}
+      <motion.svg
+        className="transform -rotate-90 w-32 h-32"
+        initial={{ strokeDashoffset: circumference }}
+        animate={
+          isInView
+            ? { strokeDashoffset: offset }
+            : { strokeDashoffset: circumference }
+        }
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      >
         <circle
           className="stroke-gray-700"
           strokeWidth={strokeWidth}
@@ -42,30 +54,34 @@ const Skills = () => {
           cx={size / 2}
           cy={size / 2}
         />
-        {/* Progress circle */}
-        <circle
-          className="stroke-cyan-400 transition-all duration-1000 ease-out"
+        <motion.circle
+          className="stroke-cyan-400"
           strokeWidth={strokeWidth}
           strokeLinecap="round"
           fill="none"
           r={radius}
           cx={size / 2}
           cy={size / 2}
-          style={{
-            strokeDasharray: circumference,
-            strokeDashoffset: offset,
-          }}
+          strokeDasharray={circumference}
+          strokeDashoffset={circumference}
+          animate={
+            isInView
+              ? { strokeDashoffset: offset }
+              : { strokeDashoffset: circumference }
+          }
+          transition={{ duration: 1.5, ease: "easeOut" }}
         />
-      </svg>
+      </motion.svg>
     );
   };
 
   return (
     <div
       id="skills"
-      className=" dark:text-white px-[12%] text-black py-10 mb-10 scroll-mt-20 w-full"
+      ref={ref}
+      className="dark:text-white px-[12%] text-black py-10 mb-10 scroll-mt-20 w-full"
     >
-      <h3 className=" text-center text-5xl font-ovo mb-16">
+      <h3 className="text-center text-5xl font-ovo mb-16">
         <span className="dark:text-white">My </span>
         <span className="text-cyan-400">Skills</span>
       </h3>
@@ -87,9 +103,15 @@ const Skills = () => {
                   <span>{skill.progress}%</span>
                 </div>
                 <div className="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-cyan-400 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.progress}%` }}
+                  <motion.div
+                    className="h-full bg-cyan-400 rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={
+                      isInView
+                        ? { width: `${skill.progress}%` }
+                        : { width: "0%" }
+                    }
+                    transition={{ duration: 1.5, ease: "easeOut" }}
                   />
                 </div>
               </div>

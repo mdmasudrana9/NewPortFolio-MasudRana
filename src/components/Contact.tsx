@@ -63,7 +63,7 @@ const Contact = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-center text-5xl font-ovo"
       >
-        Get in touch <span className="text-cyan-400">touch</span>
+        Get in <span className="text-cyan-400">touch</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}
