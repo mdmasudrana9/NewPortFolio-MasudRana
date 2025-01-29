@@ -5,10 +5,16 @@ import { assets } from "../assets/assets";
 import Link from "next/link";
 import { AboutProps } from "@/types/types";
 import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const Footer = ({ isDarkMode }: AboutProps) => {
+  const [currentYear, setCurrentYear] = useState(0);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   if (isDarkMode === null) return null;
-  const currentYear = new Date().getFullYear();
 
   const socialMediaLinks = [
     {
