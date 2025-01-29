@@ -29,7 +29,7 @@ const Work = ({ isDarkMode }: AboutProps) => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="text-center text-5xl font-ovo"
       >
-        My Latest Work<span className="text-cyan-400">Work</span>
+        My Latest <span className="text-cyan-400">Work</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}

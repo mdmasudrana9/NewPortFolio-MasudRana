@@ -104,7 +104,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <div onClick={() => setIsDarkMode((prev) => !prev)}>
+          <div
+            onClick={() => setIsDarkMode((prev) => !prev)}
+            className="cursor-pointer"
+          >
             {isDarkMode ? (
               <MdOutlineWbSunny size={24} />
             ) : (
