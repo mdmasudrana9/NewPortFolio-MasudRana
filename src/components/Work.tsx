@@ -14,21 +14,21 @@ const Work = ({ isDarkMode }: AboutProps) => {
       id="my-work"
       className="w-full px-[12%] py-10 scroll-mt-20"
     >
-      <motion.h4
+      {/* <motion.h4
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="text-center text-lg md-2 font-ovo"
       >
         My Portfolio
-      </motion.h4>
+      </motion.h4> */}
       <motion.h2
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="text-center text-5xl font-ovo"
       >
-        My Latest Work
+        My Latest Work<span className="text-cyan-400">Work</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}
@@ -59,7 +59,7 @@ const Work = ({ isDarkMode }: AboutProps) => {
                 <h2 className="font-semibold">{project.title}</h2>
                 <p className="text-sm text-gray-700">{project.description}</p>
               </div>
-              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-cyan-400 transition">
                 <Image
                   src={
                     isDarkMode ? assets.right_arrow_bold_dark : assets.send_icon
@@ -78,7 +78,7 @@ const Work = ({ isDarkMode }: AboutProps) => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.1, delay: 0.5 }}
         href=""
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 hover:border-orange-300 dark:text-white dark:border-white dark:hover:bg-darkHover "
+        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 hover:border-cyan-400 dark:text-white dark:border-white dark:hover:bg-darkHover "
       >
         Show More{" "}
         <Image src={assets.right_arrow_bold} alt="#" className="w-4" />

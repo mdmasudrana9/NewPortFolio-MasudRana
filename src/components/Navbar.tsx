@@ -79,7 +79,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           <Image
             src={isDarkMode ? assets.logonew : assets.logowhite}
             alt="logo"
-            className="md:size-24 size-10 cursor-pointer mr-14"
+            className="md:size-20 size-8 cursor-pointer mr-14"
           />
         </Link>
 
@@ -113,7 +113,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
           </div>
           <Link
             href="#contact-me"
-            className="md:flex gap-2 items-center hidden font-ovo  justify-between border border-gray-500 rounded-full px-10 py-2.5 dark:border-white/50 dark:hover:text-black hover:bg-lightHover duration-500 hover:border-orange-300 "
+            className="md:flex gap-2 items-center hidden font-ovo  justify-between border border-gray-500 rounded-full px-10 py-2.5 dark:border-white/50 dark:hover:text-black hover:bg-lightHover duration-500 hover:border-cyan-400 "
           >
             Contact <GoArrowRight />
           </Link>
@@ -136,9 +136,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
                 <li
                   key={item.id}
                   className={`font-ovo ${
-                    active === item.id
-                      ? "text-[#FC388D] dark:text-rose-500"
-                      : ""
+                    active === item.id ? "text-[#22D3EE]" : ""
                   }`}
                   onClick={() => setActive(item.id)}
                 >

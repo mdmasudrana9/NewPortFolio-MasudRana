@@ -15,22 +15,22 @@ const About = ({ isDarkMode }: AboutProps) => {
       id="about"
       className="w-full px-[12%] py-10 scroll-mt-20"
     >
-      <motion.h4
+      {/* <motion.h4
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
         className="text-center text-lg md-2 font-ovo"
       >
         Introduction
-      </motion.h4>
-      <motion.h2
+      </motion.h4> */}
+      <motion.h3
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="text-center text-5xl font-ovo"
       >
-        About
-      </motion.h2>
+        About <span className="text-cyan-400">Me</span>
+      </motion.h3>
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -56,12 +56,13 @@ const About = ({ isDarkMode }: AboutProps) => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex-1"
         >
-          <p className="mb-10 md:max-w-6xl w-full font-ovo">
+          <p className="mb-6 md:mb-10 md:w-full font-ovo text-sm md:text-base leading-relaxed md:leading-normal">
             I am an experienced Fullstack Developer with over a decade of
             professional expertise in the field. Throughout my career, I have
             had the privilege of collaborating with prestigious organizations,
             contributing to their success and growth.
           </p>
+
           <motion.ul
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

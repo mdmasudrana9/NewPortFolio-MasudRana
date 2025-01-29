@@ -64,7 +64,7 @@ const Footer = ({ isDarkMode }: AboutProps) => {
               <Link
                 href={social.link}
                 target="_blank"
-                className="flex items-center gap-2 text-[#22D3EE] hover:text-blue-700"
+                className="flex text-sm md:text-base items-center md:gap-2 text-[#22D3EE] hover:text-blue-700"
               >
                 {social.icon}
                 <span>{social.name}</span>

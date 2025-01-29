@@ -12,22 +12,22 @@ const Services = () => {
       id="services"
       className="w-full px-[12%] py-10 scroll-mt-20"
     >
-      <motion.h4
+      {/* <motion.h4
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.5 }}
         className="text-center text-lg md-2 font-ovo"
       >
         What I offer
-      </motion.h4>
-      <motion.h2
+      </motion.h4> */}
+      <motion.h3
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="text-center text-5xl font-ovo"
       >
-        My Services
-      </motion.h2>
+        My <span className="text-cyan-400">Services</span>
+      </motion.h3>
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

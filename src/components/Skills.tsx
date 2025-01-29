@@ -65,10 +65,10 @@ const Skills = () => {
       id="skills"
       className=" dark:text-white px-[12%] text-black py-10 mb-10 scroll-mt-20 w-full"
     >
-      <h1 className="text-4xl font-bold text-center mb-16">
+      <h3 className=" text-center text-5xl font-ovo mb-16">
         <span className="dark:text-white">My </span>
         <span className="text-cyan-400">Skills</span>
-      </h1>
+      </h3>
 
       <div className="flex flex-col md:flex-row gap-8 justify-between">
         {/* Technical Skills */}

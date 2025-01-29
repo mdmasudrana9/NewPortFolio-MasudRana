@@ -63,7 +63,7 @@ const Contact = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-center text-5xl font-ovo"
       >
-        Get in touch
+        Get in touch <span className="text-cyan-400">touch</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}
@@ -87,7 +87,7 @@ const Contact = () => {
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.1 }}
-            className="flex-1 p-3  cursor-pointer outline-none border-[0.5px] border-gray-400 bg-white rounded-md hover:border-orange-300 duration-500 dark:bg-darkHover/30 dark:border-white/90 "
+            className="flex-1 p-3  cursor-pointer outline-none border-[0.5px] border-gray-400 bg-white rounded-md hover:border-cyan-400 duration-500 dark:bg-darkHover/30 dark:border-white/90 "
             type="text"
             name="name"
             placeholder="Enter your name"
@@ -97,7 +97,7 @@ const Contact = () => {
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.1 }}
-            className="flex-1 p-3 cursor-pointer outline-none border-[0.5px] border-gray-400 bg-white rounded-md hover:border-orange-300 duration-500 dark:bg-darkHover/30 dark:border-white/90"
+            className="flex-1 p-3 cursor-pointer outline-none border-[0.5px] border-gray-400 bg-white rounded-md hover:border-cyan-400 duration-500 dark:bg-darkHover/30 dark:border-white/90"
             type="email"
             name="email"
             placeholder="Enter your email"
@@ -105,14 +105,14 @@ const Contact = () => {
           />
         </div>
         <textarea
-          className="w-full resize-none cursor-pointer p-4 outline-none border-[0.5px] border-gray-400 bg-white rounded-md mb-6 hover:border-orange-300 duration-500 dark:bg-darkHover/30 dark:border-white/90"
+          className="w-full resize-none cursor-pointer p-4 outline-none border-[0.5px] border-gray-400 bg-white rounded-md mb-6 hover:border-cyan-400 duration-500 dark:bg-darkHover/30 dark:border-white/90"
           rows={6}
           placeholder="Enter your message"
           required
           name="message"
         ></textarea>
         <button
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover "
+          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black hover:border-cyan-400 duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover "
           type="submit"
         >
           Submit now{" "}
