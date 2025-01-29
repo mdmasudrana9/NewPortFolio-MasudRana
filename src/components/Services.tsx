@@ -2,7 +2,7 @@
 
 import { assets, serviceData } from "@/assets/assets";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Correct import
+import { motion } from "motion/react";
 const Services = () => {
   return (
     <motion.div
