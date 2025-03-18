@@ -3,12 +3,17 @@ import { motion, useInView } from "framer-motion";
 
 const Skills = () => {
   const technicalSkills = [
-    { name: "HTML", progress: 90, icon: "⚡" },
-    { name: "CSS", progress: 85, icon: "🎨" },
-    { name: "Javascript", progress: 85, icon: "💻" },
-    { name: "Python", progress: 55, icon: "🐍" },
-    { name: "React", progress: 75, icon: "⚛️" },
-    { name: "Next.js", progress: 70, icon: "▲" },
+    { name: "React", progress: 85, icon: "⚛️" }, // React logo
+    { name: "Next.js", progress: 70, icon: "⬛" }, // Next.js (black circle)
+    { name: "Redux", progress: 80, icon: "🌀" }, // Redux swirl logo
+    { name: "Material UI", progress: 65, icon: "📐" }, // Material UI (ruler for design)
+    { name: "Shadcn", progress: 75, icon: "🎨" }, // Paint palette for UI
+    { name: "Node.js", progress: 85, icon: "🟢" }, // Green circle (Node.js logo color)
+    { name: "Express.js", progress: 85, icon: "🚀" }, // Express lightweight rocket
+    { name: "Django", progress: 65, icon: "🐍" }, // Python snake (Django is Python-based)
+    { name: "Mongoose", progress: 85, icon: "🐹" }, // Mongoose (MongoDB ODM) - hamster
+    { name: "TypeScript", progress: 75, icon: "🔷" }, // TypeScript (blue square)
+    { name: "Python", progress: 70, icon: "🐍" }, // Python snake
   ];
 
   const professionalSkills = [
@@ -16,6 +21,10 @@ const Skills = () => {
     { name: "💬 Communication", progress: 65 },
     { name: "🔧 Problem Solving", progress: 75 },
     { name: "👥 Teamwork", progress: 85 },
+    { name: "⏳ Time Management", progress: 80 }, // Managing deadlines efficiently
+    { name: "📊 Analytical Thinking", progress: 70 }, // Making data-driven decisions
+    { name: "⚡ Adaptability", progress: 85 }, // Adjusting to new challenges
+    { name: "📝 Attention to Detail", progress: 90 }, // Ensuring accuracy in work
   ];
 
   const ref = useRef(null);
